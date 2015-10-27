@@ -29,6 +29,7 @@ friends = ["crashbito", "quique_06i", "soloalbertog", "jjcpineiro"]
 url_A=[]
 url_P=[]
 url_T=[]
+tracks = []
 
 #Token
 #""""AQUÍ INGRESE SU TOKEN""" (Después de 'Bearer...')
@@ -43,7 +44,7 @@ for amigo in friends:
 	liga_playlist ="https://api.spotify.com/v1/users/" + amigo +"/playlists?offset=0&limit=3"
 	url_P.append(liga_playlist)
 
-for i in range (0,4):
+for i in range(len(friends)):
 #Esperando respuesta
 	respuesta = requests.get(url_A[i])
 
@@ -74,6 +75,8 @@ for i in range (0,4):
 		playlist_imagen = "<center><img src='" + playlist['items'][j]['images'][0]['url'] + "' height = 200 width = 200/></center>"
 		playlist_nombre = "<center><h3>" + playlist['items'][j]['name'] + "</h3></center>"
 		playlist_datos = "<TD>" + playlist_imagen + playlist_nombre + "</TD>"
+		playlist_tracks = playlist['items'][j]['tracks']['href']
+		url_T.append(playlist_tracks)
 		archivo.write(playlist_datos)
 
 #Cerrando tabla 2
@@ -85,6 +88,16 @@ for i in range (0,4):
 archivo.write(tabla_fin)
 #Cerrando centrado de tabla general
 archivo.write("/<CENTER>")
+
+#Entrando a las playlists
+for i in range(len(url_T)):
+	respuesta = requests.get(url_T[i], headers = headers)
+	canciones = json.loads(respuesta.text)
+	
+#Obteniendo canciones de las playlists
+	for j in range(len(canciones['items'])):
+		track_nombre = canciones['items'][j]['track']['name']
+		tracks.append(track_nombre)
 
 #Cerrando archivo
 archivo.close()
