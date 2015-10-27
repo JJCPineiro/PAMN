@@ -33,7 +33,7 @@ tracks = []
 
 #Token
 #""""AQUÍ INGRESE SU TOKEN""" (Después de 'Bearer...')
-headers = {'Authorization' : 'Bearer BQDOcZLNDx2SgsRPy10VGQn9ZhKWIZgAKwYnfi2QCxaNMYypX4lydbxjyjmnsxQBHANKMrP3SCsOZNxiRIwtIlcgjDNhSm8byXNIdIsLKMIavBDLxSC6dI_9vesu2n_KkMTWi_ZDb1aorPDPZ_ZcPIsv1Cgh4z6UH4GwplALWmP7tE8Gz_MTi84'}
+headers = {'Authorization' : 'Bearer BQBVYQgQe9o9eodFv3gVpohyNzJsv3g9EL0B4EnEYSvlnUM7noRGluIKgWUldMA6hwxyBjYRXlyZvOqmMPwz0IPQ4iZohSEW5m3_vcmiz0VR9YZGZJYcjC1oWQqOxS4-rNBBnV0IC1d2uEurpx7cCNJXRkj0bpp9Q9cRfruop4tMzFpHaaKMk3I'}
 
 #Creando url's
 for amigo in friends:
@@ -99,6 +99,35 @@ for i in range(len(url_T)):
 		track_nombre = canciones['items'][j]['track']['name']
 		tracks.append(track_nombre)
 
+conde =  0
+#Encontrando el número máximo 
+for rola in tracks:
+	tracks.sort()
+	if (conde < tracks.count(rola)):
+		conde = tracks.count(rola)
+
+top = 0
+total = 0
+top_ten = []
+#Elección de canciones "TOP TEN"
+while(10>top):
+	if(total<=len(tracks)):
+		for rola in tracks:
+			if(tracks.count(rola)==conde and top<10):
+				if rola not in top_ten:
+					top_ten.append(rola)
+					top += 1
+				total += 1
+	else:
+		total = 0
+		conde -= 1
+
+entrada = "<h2>TOP TEN</h2>"
+archivo.write(entrada)
+for i in range(len(top_ten)):
+	music = "<h3>" + "[" + str(i+1) + "]" + top_ten[i] + "</h3>"
+	archivo.write(music)
+
 #Cerrando archivo
 archivo.close()
 
@@ -106,3 +135,7 @@ archivo.close()
 os.startfile("Tarea4.html")
 
 print '------------FIN------------'
+
+#Cruz Piñeiro Josué de Jesús
+#Gómez Ríos José Alberto
+#Pérez Martínez Enrique
