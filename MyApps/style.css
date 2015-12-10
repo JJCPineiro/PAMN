@@ -1,0 +1,26 @@
+body {
+	background: #3675A9;
+}
+
+h1 {
+	color: #053F6F;
+	background-color: #C1BB0A;
+	font-family: century;
+	font-variant: small-caps;
+	font-size: 35px;
+	}
+
+h2 {
+	color: #ffffff;
+	font-family: sans-serif;
+	font-style: bold, italic;
+	font-size: 30px;	
+	}
+
+h3 {
+	color: #C1BB0A;
+	background-color: #053F6F;
+	font-family: arial, verdana, sans-serif;
+	font-style: italic;
+	font-size: 20px;
+	}
