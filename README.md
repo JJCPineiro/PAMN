@@ -5,3 +5,5 @@ Proyectos de la materia Programación Avanzada y Métodos Numéricos. UNAM - FI.
 // Proyecto 2 - Lectura de archivos [C]
 // Proyecto 3 - Transpuesta de una matriz [Python]
 // Proyecto 4 - Spotify API [Python]
+// Proyecto 5 - Cliente para chat [Java]
+// Proyecto "MyApps" - Proyecto Final
