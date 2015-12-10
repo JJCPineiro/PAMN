@@ -6,6 +6,6 @@ En las canciones muestra su titulo con una muestra de 0:30 seg. junto la portada
 Para los videos, en caso que sea un canal, muestra su imagen con el nombre del mismo, ambos elementos con un enlace a la página oficial; mientras sea un video, se muestra completo con el título.
 
 Universidad Nacional Autónoma de México
-Facultad de Ingeniería
-Programación Avanzada y Métodos Numéricos
-Grupo: 5
+\Facultad de Ingeniería
+\Programación Avanzada y Métodos Numéricos
+\Grupo: 5
